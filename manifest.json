@@ -1,7 +1,7 @@
 {
   "name": "CREW — Meu Treino",
   "short_name": "CREW",
-  "description": "App pessoal de treino — Série Academia by Gabriela Bahia",
+  "description": "App pessoal de treino — Mama Crew 1º Trimestre",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",

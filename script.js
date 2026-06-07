@@ -47,7 +47,7 @@ function persist() {
 
 // ============ FICHAS DISPONÍVEIS ============
 // Hipertrofia (foco principal da Paola)
-const FICHAS_HIPERTROFIA = ['AH', 'BH', 'CH', 'EH'];
+const FICHAS_HIPERTROFIA = ['A', 'B', 'C', 'D', 'CAMINHADA'];
 const FICHAS_METABOLICAS = [];
 
 function getAvailableFichas() {
@@ -148,7 +148,7 @@ function renderHoje() {
         </div>
         <div class="week-actions">
           <button class="week-btn" id="prevWeekBtn" ${state.currentWeek <= 1 ? 'disabled' : ''}>←</button>
-          <button class="week-btn" id="nextWeekBtn" ${state.currentWeek >= 6 ? 'disabled' : ''}>→</button>
+          <button class="week-btn" id="nextWeekBtn" ${state.currentWeek >= 11 ? 'disabled' : ''}>→</button>
         </div>
       </div>
       <div class="progressao-pill ${progressao.acao}">
@@ -239,7 +239,7 @@ function renderHoje() {
     }
   });
   document.getElementById('nextWeekBtn').addEventListener('click', () => {
-    if (state.currentWeek < 6) {
+    if (state.currentWeek < 11) {
       if (confirm(`Avançar para a Semana ${state.currentWeek + 1}?\n\nLembrete: ${PROGRESSAO_CARGA[state.currentWeek].instrucao}`)) {
         state.currentWeek++;
         persist();
@@ -802,7 +802,7 @@ function openSettings() {
     'Digite o número:'
   );
   if (choice === '1') {
-    if (state.currentWeek < 6) {
+    if (state.currentWeek < 11) {
       state.currentWeek++;
       persist();
       renderHoje();

@@ -3,7 +3,7 @@
 // Trata redirects (problema conhecido do iOS) e nunca cacheia respostas com redirect.
 // =============================================================================
 
-const CACHE_VERSION = 'crew-v11-2026-06-07-f1';
+const CACHE_VERSION = 'crew-v12-2026-06-07-mama';
 const SHELL = [
   './index.html',
   './style.css',
