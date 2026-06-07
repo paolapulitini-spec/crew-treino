@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CREW">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>CREW 2.0 — Meu Treino</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div>
+        <h1 id="topBarTitle">Hoje</h1>
+        <div class="subtitle" id="topBarSubtitle"></div>
+      </div>
+      <div class="top-bar-actions">
+        <button class="icon-btn" id="settingsBtn" aria-label="Configurações">⚙</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- VIEW: HOJE -->
+      <section class="view active" id="view-hoje" data-view="hoje">
+        <!-- Conteúdo renderizado via JS -->
+      </section>
+
+      <!-- VIEW: TREINO -->
+      <section class="view" id="view-treino" data-view="treino">
+        <!-- Renderizado quando uma ficha é aberta -->
+      </section>
+
+      <!-- VIEW: CALENDÁRIO -->
+      <section class="view" id="view-calendario" data-view="calendario">
+        <!-- Renderizado via JS -->
+      </section>
+
+      <!-- VIEW: HISTÓRICO -->
+      <section class="view" id="view-historico" data-view="historico">
+        <!-- Renderizado via JS -->
+      </section>
+
+      <!-- VIEW: SUBSTITUIÇÕES -->
+      <section class="view" id="view-subs" data-view="subs">
+        <div class="search-bar">
+          <input type="text" id="searchSubs" placeholder="Buscar exercício..." autocomplete="off">
+        </div>
+        <div id="subsList"></div>
+      </section>
+    </main>
+
+    <!-- Bottom Nav -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-target="hoje">
+        <span class="nav-icon">⌂</span>
+        <span>Hoje</span>
+      </button>
+      <button class="nav-item" data-target="calendario">
+        <span class="nav-icon">▦</span>
+        <span>Semanas</span>
+      </button>
+      <button class="nav-item" data-target="historico">
+        <span class="nav-icon">↻</span>
+        <span>Histórico</span>
+      </button>
+      <button class="nav-item" data-target="subs">
+        <span class="nav-icon">⇄</span>
+        <span>Substituições</span>
+      </button>
+    </nav>
+
+    <!-- Modal (substituições do exercício) -->
+    <div class="modal-overlay" id="modal">
+      <div class="modal">
+        <div class="modal-handle"></div>
+        <h3 id="modalTitle">Substituir exercício</h3>
+        <div class="subtitle" id="modalSubtitle"></div>
+        <div id="modalBody"></div>
+        <button class="close-btn" id="closeModal">Fechar</button>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">✓ Salvo</div>
+
+    <!-- Fullscreen image viewer -->
+    <div class="image-viewer" id="imageViewer" onclick="closeImageViewer()">
+      <button class="image-viewer-close" onclick="closeImageViewer()" aria-label="Fechar">✕</button>
+      <div class="image-viewer-title" id="imageViewerTitle"></div>
+      <img id="imageViewerImg" src="" alt="">
+    </div>
+  </div>
+
+  <!-- Data -->
+  <script src="data/workouts.js"></script>
+  <script src="data/substitutions.js"></script>
+  <script src="data/calendar.js"></script>
+  <script src="data/imagepages.js"></script>
+
+  <!-- App logic -->
+  <script src="script.js"></script>
+</body>
+</html>
